@@ -1,0 +1,352 @@
+<% include partials/header1.ejs %>
+	<div class="page-wrapper">
+        <!-- start header -->
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <!-- logo start -->
+               <div class="page-logo">
+                    <a href="/view_profile">
+                        <img src="images/img2.png" alt="logo" class="img-responsive" width="30%" style="margin-top:15px;"/> </a>
+                    <div class="menu-toggler sidebar-toggler" style="margin-top:-15px;">
+                        <span></span>
+                    </div>
+                </div>
+                <!-- logo end -->
+                <!-- start mobile menu -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span></span>
+                </a>
+               <!-- end mobile menu -->
+                <!-- start header menu -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+ 						<!-- start manage user dropdown -->
+ 						<li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <!-- <img alt="" class="img-circle " src="img/dp.svg" /> -->
+                                <span class="fa fa-user-circle"></span>
+                                <span class="username username-hide-on-mobile"> <%= typeof name!= 'undefined' ? name : '' %> </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-settings"></i> Change Password
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-picture-o"></i> Change Picture
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/logout">
+                                        <i class="icon-logout"></i> Log Out </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end header -->
+        <div class="clearfix"> </div>
+        <!-- start page container -->
+        <div class="page-container">
+ 			<!-- start sidebar menu -->
+ 			<div class="sidebar-container">
+ 				<div class="sidemenu-container navbar-collapse collapse fixed-menu">
+	                <div id="remove-scroll">
+	                    <ul class="sidemenu  page-header-fixed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+	                        <li class="sidebar-toggler-wrapper hide">
+	                            <div class="sidebar-toggler">
+	                                <span></span>
+	                            </div>
+	                        </li>
+	                        <li class="sidebar-user-panel">
+	                            <div class="user-panel">
+	                                <div class="pull-left image">
+	                                    <img src="<%= typeof img!= 'undefined' ? img: '' %>" class="img-circle user-img-circle" alt="User Image" />
+	                                </div>
+	                                <div class="pull-left info">
+	                                    <p> <%= typeof name!= 'undefined' ? name : '' %></p>
+	                                   <!--  <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline"> Online</span></a> -->
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li class="nav-item">
+                                <a href="#" class="nav-link nav-toggle">
+                                    <i class="fa fa-user-circle"></i>
+                                    <span class="title">Profile</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item  ">
+                                        <a href="/view_profile" class="nav-link ">
+                                            <span class="title">View Profile</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item  ">
+                                        <a href="/edit_profile" class="nav-link ">
+                                            <span class="title">Edit Profile</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                <a href="#" class="nav-link nav-toggle">
+                                    <i class="fa fa-gear"></i>
+                                    <span class="title">More Profile Settings</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item  ">
+                                        <a href="#" class="nav-link " id="change_pass">
+                                            <span class="title">change password</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item  ">
+                                        <a href="#" class="nav-link " id="change_pics">
+                                            <span class="title">change Profile Picture</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                                </ul>
+                            </li>
+	                        <li class="nav-item">
+	                            <a href="#" class="nav-link nav-toggle">
+	                                <i class="fa fa-envelope"></i>
+	                                <span class="title">Messages</span>
+	                                <span class="arrow"></span>
+	                                <span class="label label-rouded label-menu green-bgcolor">3</span>
+	                            </a>
+	                            <ul class="sub-menu">
+	                                   <li class="nav-item  ">
+                                        <a href="create_message.html" class="nav-link ">
+                                            <span class="title">Create Message</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item  ">
+	                                    <a href="inbox.html" class="nav-link ">
+	                                        <span class="title">Inbox</span>
+	                                    </a>
+	                                </li>
+                                       <li class="nav-item  ">
+                                        <a href="sent_message.html" class="nav-link ">
+                                            <span class="title">Sent Messages</span>
+                                        </a>
+                                    </li>
+	                             
+	                            </ul>
+	                        </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link nav-toggle">
+                                    <i class="fa fa-pencil"></i>
+                                    <span class="title">Vote Contestant</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item  ">
+                                        <a href="/voting_rules" class="nav-link ">
+                                            <span class="title">See Voting Rules</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item  ">
+                                        <a href="/view_contestants" class="nav-link ">
+                                            <span class="title">View All Contestant</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item  ">
+                                <a href="/complain_enquiries" class="nav-link nav-toggle"><i class="fa fa-phone"></i> 
+                                <span class="title">Complain/Enquiries</span></a>
+                            </li>
+                            <li class="nav-item  ">
+                                <a href="/logout" class="nav-link nav-toggle"><i class="fa fa-lock"></i> 
+                                <span class="title">Log Out</span></a>
+                            </li>
+	                    </ul>
+	                </div>
+                </div>
+            </div>
+            <!-- end sidebar menu --> 
+			<!-- start page content -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Welcome <%= typeof name!= 'undefined' ? name: '' %></div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Edit Profile</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+         <div class="col-md-12">
+            <!-- BEGIN PROFILE CONTENT -->
+          <div class="profile-content">
+            <div class="row">
+             <div class="card">
+              <div class="card-head card-topline-aqua">
+                <header></header>
+              </div>
+                <div class="card-body no-padding height-9">
+                <div class="container-fluid">
+                 <div class="row">
+                  <div class="col-md-12">
+                    <div class="tabbable-line">
+                    <ul class="nav nav-tabs">
+                     <li class="active"><a href="#tab1" data-toggle="tab"> Personal Information</a></li>
+                    </ul>
+                     <!-- <div class="alert alert-success"> --><%= typeof msg!= 'undefined' ? msg: '' %><!-- </div> -->
+                    <div class="tab-content">
+                     <div class="tab-pane active fontawesome-demo" id="tab1">
+                    <div class="row">
+                     <div id="biography" >
+                    <div class="row">
+                    <form action="/edit_profile" method="POST">
+                        <div class="col-md-3 col-xs-6 b-r"> <strong>Full Name</strong><hr>
+                      <input type="text" name="name" disabled="" class="form-control" placeholder="<%= typeof name!= 'undefined' ? name: '' %>">
+                    </div>
+                    <div class="col-md-3 col-xs-6"> <strong>Email</strong><hr>
+                     <input type="email" name="email" disabled="" class="form-control" placeholder="<%= typeof email!= 'undefined' ? email: '' %>">
+                    </div>
+                    <div class="col-md-3 col-xs-6 b-r"> <strong>Phone number</strong><hr>
+                     <input type="text" name="telephone" class="form-control" placeholder="<%= typeof telephone!= 'undefined' ? telephone: '' %>">
+                    </div>
+                    <div class="col-md-3 col-xs-6 b-r"> <strong>Type</strong><hr>
+                     <input type="text" name="type" disabled="" class="form-control" placeholder="User">
+                    </div>
+                </div>
+                <hr>
+                    <div class="row">
+                       <div class="col-md-3 col-xs-6"> <strong>Location</strong><hr>
+                     <input type="text" name="location" class="form-control" placeholder="<%= typeof location!= 'undefined' ? location: '' %>">
+                    </div>
+                     <div class="col-md-3 col-xs-6 b-r"> <strong>Favourite TV Show</strong><hr>
+                     <input type="text" name="fav_show" class="form-control" placeholder="<%= typeof fav_show!= 'undefined' ? fav_show: '' %>">
+                    </div>
+                    <div class="col-md-3 col-xs-6 b-r"> <strong>Favourite HBFL Housemate</strong><hr>
+                     <input type="text" name="fav_housemate" class="form-control" placeholder="<%= typeof fav_housemate!= 'undefined' ? fav_housemate: '' %>">
+                    </div>
+                    <div class="col-md-3 col-xs-6 b-r"> <br><hr>
+                    <input type="submit" class="btn btn-success" value="Update Profile">
+                    </div>
+                    </form>
+                 </div>
+                <br>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         </div>
+                                     </div>
+                                </div>
+                                <!-- END PROFILE CONTENT -->
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <!-- end page content -->
+        </div>
+        <!-- end page container -->
+         <!-- Modal for password reset -->
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <!-- <h4 class="modal-title">Modal Header</h4> -->
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-1">
+                
+            </div>
+      <div class="col-md-10">
+        <h3 style="color: #007b70;">Reset Your Password</h3><br>
+        <form action="/password_reset" method="POST">
+          <div>
+            <i class="fa fa-unlock-alt"></i>
+            <input type="password" name="old_password" class="form-control" placeholder="Enter Your Old Password" required="">
+          </div><hr>
+          <div>
+            <i class="fa fa-lock"></i>
+            <input type="password" name="password" class="form-control" placeholder="Choose Your New Password" required="">
+          </div><hr>
+          <div>
+            <i class="fa fa-lock"></i>
+            <input type="password" name="conf_password" class="form-control" placeholder="Confirm Your New Password" required="">
+          </div><hr>
+          <div>
+            <input type="submit" name="submit" value="Reset Password" class="btn btn-success">
+          </div>
+        </form><br>
+        <h5 style="text-align: center;">&copy HBFLEmpire</h5>
+      </div>
+      <div class="col-md-1">
+        
+      </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+    <!-- </modal> --> 
+    <!-- Modal for profile picture change -->
+<div id="myModal3" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <!-- <h4 class="modal-title">Modal Header</h4> -->
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-1">
+                
+            </div>
+      <div class="col-md-10">
+        <h3 style="color: #007b70;">Change Your Profile Picture</h3><br>
+        <form action="/change_profile_picture" method="POST" enctype="multipart/form-data">
+          <div>
+            <i class="fa fa-picture-o"></i>
+            <input type="file" name="image" class="form-control" required="">
+          </div><hr>
+          <div>
+            <input type="submit" name="submit" value="Upload" class="btn btn-success">
+          </div>
+        </form><br>
+        <h5 style="text-align: center;">&copy HBFLEmpire</h5>
+      </div>
+      <div class="col-md-1">
+        
+      </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+    <!-- </modal> --> 
+<% include partials/footer1.ejs %>

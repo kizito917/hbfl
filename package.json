@@ -1,0 +1,31 @@
+{
+  "name": "hbflempire",
+  "version": "1.0.0",
+  "description": "a simple voting project",
+  "main": "server.js",
+  "engines": {
+    "node": "8.11.1",
+    "npm": "5.6.0"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "bootstrap": "^4.1.3",
+    "express-flash-messages": "^0.1.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "jquery": "^3.3.1",
+    "mongoose": "^5.2.7",
+    "multer": "^1.3.1",
+    "ngrok": "^3.0.1",
+    "passport": "^0.4.0",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Kizito917",
+  "license": "ISC"
+}
